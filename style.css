@@ -39,7 +39,8 @@ nav{
 }
 
 .logo img{
-    height:65px;
+    height:95px;
+    width:auto;
 }
 
 nav ul{
@@ -62,12 +63,12 @@ nav a:hover{
 /* Hero */
 
 .hero{
-    height:100vh;
+    min-height:100vh;
     display:flex;
     justify-content:center;
     align-items:center;
     text-align:center;
-    padding:20px;
+    padding:220px 20px 80px;
     background:
     radial-gradient(circle at top,#2d5d1e 0%,#0b0b0b 70%);
 }
@@ -77,9 +78,10 @@ nav a:hover{
 }
 
 .hero h1{
-    font-size:58px;
+    font-size:clamp(2.4rem,7vw,4rem);
+    line-height:1.15;
     color:#ffffff;
-    margin-bottom:20px;
+    margin-bottom:25px;
 }
 
 .hero p{
@@ -254,23 +256,36 @@ footer{
 
 nav{
     flex-direction:column;
+    padding:20px;
 }
 
 nav ul{
     margin-top:15px;
-    gap:15px;
+    gap:18px;
+    flex-wrap:wrap;
+    justify-content:center;
+}
+
+.logo img{
+    height:80px;
+}
+
+.hero{
+    padding:240px 20px 80px;
 }
 
 .hero h1{
-    font-size:38px;
+    font-size:46px;
+    line-height:1.2;
 }
 
 .hero p{
     font-size:18px;
 }
 
-.logo img{
-    height:55px;
+.main-button{
+    width:100%;
+    max-width:340px;
 }
 
 }
