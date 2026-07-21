@@ -4,9 +4,9 @@
 // ==============================
 
 
-// ==========================
-// Cinematic Logo Intro
-// ==========================
+// ==============================
+// Intro Animation Control
+// ==============================
 
 document.body.style.overflow = "hidden";
 
@@ -17,8 +17,7 @@ window.addEventListener("load", () => {
         const intro = document.getElementById("intro-screen");
 
         if (intro) {
-            intro.style.opacity = "0";
-            intro.style.visibility = "hidden";
+            intro.style.display = "none";
         }
 
         document.body.style.overflow = "auto";
@@ -28,47 +27,62 @@ window.addEventListener("load", () => {
 });
 
 
-// ==========================
-// Contact popup
-// ==========================
+// ==============================
+// Contact Popup
+// ==============================
 
 const contactButton = document.getElementById("contactButton");
 const popup = document.getElementById("popup");
 const closePopup = document.getElementById("closePopup");
 
 
-contactButton.addEventListener("click", () => {
-    popup.style.display = "flex";
-});
+if(contactButton){
+
+    contactButton.addEventListener("click", () => {
+
+        popup.style.display = "flex";
+
+    });
+
+}
 
 
-closePopup.addEventListener("click", () => {
-    popup.style.display = "none";
-});
+if(closePopup){
+
+    closePopup.addEventListener("click", () => {
+
+        popup.style.display = "none";
+
+    });
+
+}
 
 
 // Close popup when clicking outside
 
 window.addEventListener("click", (event) => {
 
-    if (event.target === popup) {
+    if(event.target === popup){
+
         popup.style.display = "none";
+
     }
 
 });
 
 
-// ==========================
-// Fade-in animation on scroll
-// ==========================
+// ==============================
+// Fade-in Animation On Scroll
+// ==============================
 
 const sections = document.querySelectorAll("section");
+
 
 const observer = new IntersectionObserver((entries) => {
 
     entries.forEach((entry) => {
 
-        if (entry.isIntersecting) {
+        if(entry.isIntersecting){
 
             entry.target.style.opacity = "1";
             entry.target.style.transform = "translateY(0)";
@@ -78,7 +92,117 @@ const observer = new IntersectionObserver((entries) => {
     });
 
 }, {
-    threshold: 0.2
+
+    threshold:0.2
+
+});
+
+
+sections.forEach((section) => {
+
+    section.style.opacity = "0";
+    section.style.transform = "translateY(50px)";
+    section.style.transition = "all 0.8s ease";
+
+    observer.observe(section);
+
+});// ==============================
+// MDP Assist Landing Page
+// script.js
+// ==============================
+
+
+// ==============================
+// Intro Animation Control
+// ==============================
+
+document.body.style.overflow = "hidden";
+
+window.addEventListener("load", () => {
+
+    setTimeout(() => {
+
+        const intro = document.getElementById("intro-screen");
+
+        if (intro) {
+            intro.style.display = "none";
+        }
+
+        document.body.style.overflow = "auto";
+
+    }, 6000);
+
+});
+
+
+// ==============================
+// Contact Popup
+// ==============================
+
+const contactButton = document.getElementById("contactButton");
+const popup = document.getElementById("popup");
+const closePopup = document.getElementById("closePopup");
+
+
+if(contactButton){
+
+    contactButton.addEventListener("click", () => {
+
+        popup.style.display = "flex";
+
+    });
+
+}
+
+
+if(closePopup){
+
+    closePopup.addEventListener("click", () => {
+
+        popup.style.display = "none";
+
+    });
+
+}
+
+
+// Close popup when clicking outside
+
+window.addEventListener("click", (event) => {
+
+    if(event.target === popup){
+
+        popup.style.display = "none";
+
+    }
+
+});
+
+
+// ==============================
+// Fade-in Animation On Scroll
+// ==============================
+
+const sections = document.querySelectorAll("section");
+
+
+const observer = new IntersectionObserver((entries) => {
+
+    entries.forEach((entry) => {
+
+        if(entry.isIntersecting){
+
+            entry.target.style.opacity = "1";
+            entry.target.style.transform = "translateY(0)";
+
+        }
+
+    });
+
+}, {
+
+    threshold:0.2
+
 });
 
 
